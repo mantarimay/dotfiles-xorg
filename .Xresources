@@ -1,0 +1,53 @@
+Xft.dpi:                        109
+URxvt*termName:                 rxvt-256color
+URxvt*font:                     xft:DejaVu Sans Mono:pixelsize=10xft
+URxvt.depth:                    0
+URxvt*lineSpace:                1
+URxvt.letterSpace:              0
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt*geometry:                 74x23
+URxvt.scrollBar:                false
+URxvt*loginShell:               true
+URxvt.perl-ext-common:          default,clipboard
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+URxvt.clipboard.autocopy:       true
+Twobwm.enable_compton:          true
+
+! special
+*.foreground:   #ffffff
+*.background:   #232729
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #1f1b2a
+*.color8:       #F68A6D
+
+! pink
+*.color1:       #495970
+*.color9:       #495970
+
+! blue
+*.color2:       #4FBFD7
+*.color10:      #4FBFD7
+
+! yellow
+*.color3:       #F9EEAC
+*.color11:      #F9EEAC
+
+! yellowtua
+*.color4:       #B35391
+*.color12:      #B35391
+
+! biru
+*.color5:       #B8E1DD
+*.color13:      #B8E1DD
+
+! coklatenom
+*.color6:       #E5D3AF
+*.color14:      #E5D3AF
+
+! white
+*.color7:       #ffffff
+*.color15:      #ffffff
