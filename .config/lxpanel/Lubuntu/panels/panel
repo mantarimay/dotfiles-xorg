@@ -1,0 +1,132 @@
+# lxpanel <profile> config file. Manually editing is not recommended.
+# Use preference dialog in lxpanel to adjust config when you can.
+
+Global {
+  edge=top
+  allign=left
+  margin=0
+  widthtype=pixel
+  width=1366
+  height=29
+  transparent=1
+  tintcolor=#bf9a57
+  alpha=255
+  setdocktype=0
+  setpartialstrut=1
+  usefontcolor=0
+  fontcolor=#000000
+  background=0
+  backgroundfile=/usr/share/lxpanel/images/lubuntu-background.png
+  iconsize=28
+  align=left
+  autohide=0
+  usefontsize=1
+  fontsize=10
+  heightwhenhidden=4
+}
+Plugin {
+  type=space
+  Config {
+    Size=15
+  }
+}
+Plugin {
+  type=menu
+  Config {
+    system {
+    }
+    separator {
+    }
+    item {
+      command=run
+    }
+    separator {
+    }
+    item {
+      command=logout
+      image=gnome-logout
+    }
+    image=/home/may/Pictures/icon/baseline-radio_button_unchecked-24px.svg
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=119
+  }
+  expand=1
+}
+Plugin {
+  type=taskbar
+  Config {
+    FlatButton=-1
+    IconsOnly=0
+    MaxTaskWidth=40
+    ShowAllDesks=0
+  }
+  expand=1
+}
+Plugin {
+  type=launchbar
+  Config {
+    Button {
+      id=xfce4-appfinder.desktop
+    }
+  }
+}
+Plugin {
+  type=tray
+  Config {
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=9
+  }
+  expand=0
+}
+Plugin {
+  type=dclock
+  Config {
+    ClockFmt=%H
+    BoldFont=1
+    IconOnly=0
+    CenterText=1
+    TooltipFmt=%A %x
+  }
+}
+Plugin {
+  type=dclock
+  Config {
+    ClockFmt=%M
+    TooltipFmt=%A %x
+    BoldFont=1
+    IconOnly=0
+    CenterText=0
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=7
+  }
+  expand=0
+}
+Plugin {
+  type=batt
+  Config {
+    BackgroundColor=#D3DAE3
+    ChargingColor1=#D3DAE3
+    ChargingColor2=#D3DAE3
+    DischargingColor1=#8C8B8A
+    DischargingColor2=#8C8B8A
+    HideIfNoBattery=0
+    AlarmCommand=notify-send "Battery low" --icon=battery-caution
+    AlarmTime=5
+    BorderWidth=1
+    Size=10
+    ShowExtendedInformation=0
+    BatteryNumber=0
+  }
+}
