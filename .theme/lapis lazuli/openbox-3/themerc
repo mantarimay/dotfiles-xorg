@@ -1,0 +1,35 @@
+# themerc
+
+# colors
+window.active.title.bg.color: #B053FF
+window.inactive.title.bg.color: #B053FF
+window.inactive.label.text.color: #B053FF
+window.inactive.button.unpressed.image.color: #B053FF
+menu.title.text.color: #000000
+menu.items.bg.color: #B053FF
+menu.items.active.bg.color: #ffffff
+menu.items.text.color: #000000
+menu.items.active.text.color: #000000
+menu.border.color: #B053FF
+menu.separator.color: #B053FF
+
+# window
+window.*.title.bg: solid flat
+window.*.*.bg: parentrelative
+padding.width: 4
+padding.height: 4
+border.width: 0
+window.client.padding.width: 0
+window.handle.width: 0
+
+# menu
+menu.items.bg: solid flat
+menu.title.bg: parentrelative
+menu.items.active.bg: solid flat
+menu.overlap.x: -13
+menu.overlap.y: 5
+menu.separator.padding.height: 4
+menu.border.width: 7
+
+# osd
+osd.border.width: 1
