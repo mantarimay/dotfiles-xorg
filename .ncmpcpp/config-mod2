@@ -1,0 +1,218 @@
+### Directories ###
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory  = ~/.lyrics
+mpd_music_dir     = ~/Music
+
+### Behaviour ###
+#execute_on_song_change = "notify-send "NOW PLAYING" "$(mpc --format "%artist% - %title%" | head -n 1)""
+message_delay_time = 1
+autocenter_mode = "yes"
+centered_cursor = "yes"
+ignore_leading_the = "yes"
+allow_for_physical_item_deletion = "no"
+
+### Visualizer ###  
+visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_output_name = "mpd_visualizer"
+visualizer_in_stereo = "yes"
+visualizer_sample_multiplier = 0.9
+visualizer_sync_interval = 30
+visualizer_look = ●●
+
+### Appearance ###
+colors_enabled = "yes"
+playlist_display_mode = "columns"
+
+# Window #
+song_window_title_format = "{%a} - {%t}"
+statusbar_visibility = "no"
+header_visibility = "no"
+titles_visibility = "no"
+
+# Progress bar #
+progressbar_look = "   "
+#progressbar_look = "---"
+progressbar_color = "132"
+progressbar_elapsed_color = "126"
+progressbar_boldness = "yes"
+# Song status #
+#now_playing_prefix = "$b"
+#now_playing_suffix = "$/b"
+song_status_format = "$b$5%t$/b {$8by} $b$5%a$8$/b"
+#song_status_format = " $2%a $4⟫$3⟫ $7%t $4⟫$3⟫ $5%b "
+#song_status_format = "$8%t $9• $2%a $9•{ $5%b $9• }$7%y$9"
+# Song list #
+song_list_format = "{$6%a | }{$9%t}$R{%l}"
+#song_list_format = "{ $8%a $1» $2}{%t} $R$1%b"
+# Playlist #
+#song_columns_list_format = "$L(9)[white]{l} (20)[red]{a} (30)[green]{b}$R(20)[cyan]{t}"
+#song_columns_list_format = "(25)[white]{a} (25)[blue]{brE} (47)[white]{t|f} (6f)[blue]{l}"
+#song_columns_list_format = "(15)[white]{lr} (1)[black]{} (40)[red]{a} (40)[green]{t}"
+#song_columns_list_format = "(40)[magenta]{ar} (40)[green]{t}"
+song_columns_list_format = "(50)[256]{ar} (50)[8]{t}"
+# Colors #
+main_window_highlight_color = "green"
+main_window_color = "blue"
+#state_line_color = "yellow"
+#state_flags_color = "green"
+color1 = "white"
+color2 = "red"
+
+##### connection settings #####
+#
+mpd_host = 127.0.0.1
+mpd_port = 6600
+#
+#mpd_connection_timeout = 5
+#
+## Needed for tag editor and file operations to work.
+##
+#mpd_music_dir = ~/music
+#
+#mpd_crossfade_time = 5
+#
+##### music visualizer #####
+##
+## Note: In order to make music visualizer work you'll
+## need to use mpd fifo output, whose format parameter
+## has to be set to 44100:16:1 for mono visualization
+## or 44100:16:2 for stereo visualization. Example
+## configuration (it has to be put into mpd.conf):
+##
+## audio_output {
+##        type            "fifo"
+##        name            "Visualizer feed"
+##        path            "/tmp/mpd.fifo"
+##        format          "44100:16:2"
+## }
+##
+#
+#visualizer_fifo_path = /tmp/mpd.fifo
+#
+##
+## Note: Below parameter is needed for ncmpcpp
+## to determine which output provides data for
+## visualizer and thus allow syncing between
+## visualization and sound as currently there
+## are some problems with it.
+##
+#
+#visualizer_output_name = Visualizer feed
+#
+##
+## If you set format to 44100:16:2, make it 'yes'.
+##
+#visualizer_in_stereo = yes
+#
+##
+## Multiply received samples by given value. Very
+## useful for proper visualization of quiet music.
+##
+#visualizer_sample_multiplier = 1
+#
+##
+## Note: Below parameter defines how often ncmpcpp
+## has to "synchronize" visualizer and audio outputs.
+## 30 seconds is optimal value, but if you experience
+## synchronization problems, set it to lower value.
+## Keep in mind that sane values start with >=10.
+##
+#
+#visualizer_sync_interval = 30
+#
+##
+## Note: To enable spectrum frequency visualization
+## you need to compile ncmpcpp with fftw3 support.
+##
+#
+## Available values: spectrum, wave, wave_filled, ellipse.
+##
+#visualizer_type = wave
+#
+#visualizer_look = ●▮
+#
+#visualizer_color = blue, cyan, green, yellow, magenta, red
+#
+## Alternative subset of 256 colors for terminals that support it.
+##
+#visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
+#
+##### system encoding #####
+##
+## ncmpcpp should detect your charset encoding
+## but if it failed to do so, you can specify
+## charset encoding you are using here.
+##
+## Note: You can see whether your ncmpcpp build
+## supports charset detection by checking output
+## of `ncmpcpp --version`.
+##
+## Note: Since MPD uses UTF-8 by default, setting
+## this option makes sense only if your encoding
+## is different.
+##
+#
+#system_encoding = ""
+#
+##### delays #####
+#
+## Time of inactivity (in seconds) after playlist
+## highlighting will be disabled (0 = always on).
+##
+#playlist_disable_highlight_delay = 5
+#
+## Defines how long messages are supposed to be visible.
+##
+#message_delay_time = 5
+#
+##### song format #####
+##
+## For a song format you can use:
+##
+## %l - length
+## %f - filename
+## %D - directory
+## %a - artist
+## %A - album artist
+## %t - title
+## %b - album
+## %y - date
+## %n - track number (01/12 -> 01)
+## %N - full track info (01/12 -> 01/12)
+## %g - genre
+## %c - composer
+## %p - performer
+## %d - disc
+## %C - comment
+## %P - priority
+## $R - begin right alignment
+##
+## If you want to make sure that a part of the format is displayed
+## only when certain tags are present, you can archieve it by
+## grouping them with brackets, e.g. '{%a - %t}' will be evaluated
+## to 'ARTIST - TITLE' if both tags are present or '' otherwise.
+## It is also possible to define a list of alternatives by providing
+## several groups and separating them with '|', e.g. '{%t}|{%f}'
+## will be evaluated to 'TITLE' or 'FILENAME' if the former is not
+## present.
+##
+## Note: If you want to set limit on maximal length of a tag, just
+## put the appropriate number between % and character that defines
+## tag type, e.g. to make album take max. 20 terminal cells, use '%20b'.
+##
+## In addition, formats support markers used for text attributes.
+## They are followed by character '$'. After that you can put:
+##
+## - 0 - default window color (discards all other colors)
+## - 1 - black
+## - 2 - red
+## - 3 - green
+## - 4 - yellow
+## - 5 - blue
+## - 6 - magenta
+## - 7 - cyan
+## - 8 - white
+## - 9 - end of current color
+## - b - bold text
+## - u - underline text
+## - r - reverse colors
