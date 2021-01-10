@@ -15,6 +15,7 @@ URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
 URxvt.clipboard.autocopy:       true
 Twobwm.enable_compton:          true
 
+
 ! special
 *.foreground:   #ffffff
 *.background:   #232729
