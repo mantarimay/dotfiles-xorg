@@ -1,1 +1,1 @@
-# dotfile
+# welcome to my minimalist dotfiles
