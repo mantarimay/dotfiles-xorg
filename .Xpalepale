@@ -1,0 +1,80 @@
+Xft.dpi:                        109
+URxvt*termName:                 rxvt-256color
+URxvt*font:                     xft:DejaVu Sans Mono:pixelsize=10xft
+!URxvt*font:                     xft:Iosevka Nerd Font:pixelsize=10xft
+URxvt*lineSpace:                1
+URxvt.letterSpace:              0
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt*geometry:                 74x23
+URxvt.scrollBar:                false
+URxvt*loginShell:               true
+!URxvt.perl-ext-common:          default,clipboard
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+URxvt.clipboard.autocopy:       true
+
+!truetype font and size.
+!xterm*faceName: DejaVu Sans Mono
+!xterm*faceSize: 16
+xterm*font:     *-fixed-*-*-*-18-*
+xterm*geometry:                 75x21
+
+Twobwm.enable_compton:          true
+
+!! dark theme / pallate pale-pale
+
+! background / slate grey 
+*.background:	#778899
+! forground / whitesmoke
+*.foreground:	#f5f5f5
+
+! WHITE
+! ghostwhite
+*.color8: #f8f8ff
+! lightgrey
+*.color7: #d3d3d3
+
+! BLACK
+! lightsteelgray
+*.color0: #708090
+! lightsteelblue
+*.color15: #b0c4de
+
+! RED
+! pink
+*.color1: #ffc0cb
+! lightpink
+*.color9: #ffb6c1
+
+! GREEN
+! palegreen
+*.color2: #98fb98
+! yellowgreen
+*.color10: #adff2f
+
+! YELLOW
+! weath
+*.color3: #f5deb3
+! peach puff
+*.color11: #ffdab9
+
+! BLUE
+! torquiose
+*.color4:#40e0d0
+! paleturquoise
+*.color12: #afffff
+
+! PURPLE
+! violet
+*.color5: #ee82ee
+! plum
+*.color13: #dda0dd
+
+! CYAN
+! light blue
+*.color6: #add8e6
+! light cyan
+*.color14: #e0ffff
+
+
