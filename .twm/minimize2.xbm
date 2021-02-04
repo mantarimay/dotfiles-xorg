@@ -1,0 +1,4 @@
+#define minimize2_width 6
+#define minimize2_height 6
+static char minimize2_bits[] = {
+  0x03, 0x03, 0x00, 0x00, 0x33, 0x33, };

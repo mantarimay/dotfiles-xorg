@@ -1,0 +1,4 @@
+#define maximize2_width 6
+#define maximize2_height 6
+static char maximize2_bits[] = {
+  0x33, 0x33, 0x00, 0x00, 0x03, 0x03, };
