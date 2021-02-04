@@ -1,0 +1,151 @@
+#
+# Default twm configuration file; needs to be kept small to conserve string
+# space in systems whose compilers don't handle medium-sized strings.
+#
+# Sites should tailor this file, providing any extra title buttons, menus, etc.
+# that may be appropriate for their environment.  For example, if most of the
+# users were accustomed to uwm, the defaults could be set up not to decorate
+# any windows and to use meta-keys.
+#
+
+NoGrabServer
+RestartPreviousState
+DecorateTransients
+TitleFont "-adobe-helvetica-bold-r-normal--*-180-*-*-*-*-*-*"
+ResizeFont "-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
+MenuFont "-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
+IconFont "-adobe-helvetica-bold-r-normal--*-100-*-*-*-*-*-*"
+IconManagerFont "-adobe-helvetica-bold-r-normal--*-100-*-*-*"
+
+
+#NoTitle
+
+NoTitle
+{
+	"cal"
+	"ncmpc"
+	"htop"
+	"vala-panel"
+	"tty-clock"
+	"sxiv"
+	"display"
+	"pms"
+	"polybar"
+#	"st"
+	"TWM Icon Manager"
+	"WorkSpaceManager"
+
+}
+
+RestartPreviousState
+
+Color
+{
+    DefaultBackground "pink"
+    DefaultForeground "white"
+
+    # Border on focused window
+    BorderColor "white"
+
+    # Border on unfocused windows.
+    #
+    # If we define both of these to the same colour, we get a solid
+    # border. Otherwise stippled.
+    BorderTileBackground "grey40"
+    BorderTileForeground "grey40"
+
+    MenuBackground "pink"
+    MenuForeground "white"
+    MenuTitleBackground "pink"
+    MenuTitleForeground "white"
+
+    TitleBackground "pink"
+    TitleForeground "white"
+
+    IconManagerBackground "lavenderblush"
+    IconManagerForeground "azure4"
+    IconManagerHighlight "azure4"
+
+   # MapWindowBackground "dimgray"
+   # MapWindowForeground "white"
+}
+
+# Settings effecting window borders etc ------------------------------------------
+BorderWidth 0 # Number of pixels for border around entire window
+FramePadding 6 # Number of pixels between titlebar buttons & frame
+TitleButtonBorderWidth 0 # Number of pixels for button border
+TitlePadding 6 # Number of pixels around title buttons
+ButtonIndent 0 # Larger seems to squash buttons together
+MenuBorderWidth 0 # Number of pixels for menu border
+NoMenuShadows # No shadow behind the menu
+NoDefaults
+#NoTitleHighlight
+RandomPlacement "on"
+
+
+
+# Title bar buttons
+IconDirectory "~/.twm" # Directory for non default icons
+LeftTitleButton "maximize2.xbm"=f.resize
+RightTitleButton "minimize2.xbm"=f.iconify
+RightTitleButton "maximize1.xbm"=f.fullzoom
+RightTitleButton "close1.xbm"=f.destroy
+
+#
+# Define some useful functions for motion-based actions.
+#
+MoveDelta 3
+Function "move-or-lower" { f.move f.deltastop f.lower }
+Function "move-or-raise" { f.move f.deltastop f.raise }
+Function "move-or-iconify" { f.move f.deltastop f.iconify }
+
+#
+# Set some useful bindings.  Sort of uwm-ish, sort of simple-button-ish
+#
+
+Button1 = : root : f.menu "defops"
+
+Button1 = m : window|icon : f.function "move-or-raise"
+Button2 = m : window|icon : f.iconify
+Button3 = m : window|icon : f.function "move-or-lower"
+
+Button1 = : title : f.function "move-or-raise"
+Button2 = : title : f.raiselower
+
+Button1 = : icon : f.function "move-or-iconify"
+Button2 = : icon : f.iconify
+
+Button1 = : iconmgr : f.iconify
+Button2 = : iconmgr : f.iconify
+
+#
+# And a menus with the usual things
+#
+menu "defops"
+{
+"TWM" 	f.title
+"Maximize"     ( "azure4" : "lavenderblush" )  f.fullzoom
+"Iconify"	 ( "azure4" : "lavenderblush" ) f.iconify
+"Resize"  ( "azure4" : "lavenderblush" )	f.resize
+"Move"	 ( "azure4" : "lavenderblush" )	f.move
+"xterm"  ( "azure4" : "lavenderblush" )        f.exec "exec xterm &"
+"vncviewer"  ( "azure4" : "lavenderblush" )	f.exec "exec vncviewer &" 
+"Kill"	 ( "azure4" :  "lavenderblush" )	f.destroy
+"Restart"  ( "azure4" : "lavenderblush" )	f.restart
+"Other"	  ( "azure4" : "lavenderblush" )	f.menu "other"
+}
+
+menu "other"
+{
+"Delete"	f.delete
+"Raise" f.raise
+"Lower"	f.lower
+#""  f.nop
+"Focus"  f.focus
+"Unfocus" f.unfocus
+"Show Iconmgr"  f.showiconmgr
+"Hide Iconmgr"  f.hideiconmgr
+"identity" 	f.identify
+"Source .twmrc"  f.twmrc
+#"" f.beep
+}
